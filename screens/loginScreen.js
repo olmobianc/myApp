@@ -9,13 +9,25 @@ function LoginScreen() {
 
     return (
         <View>
+
             <Text style={styles.loginText}>Login</Text>
-            <TextInput style={styles.textInput} value={email} />
-            <TextInput style={styles.textInput} value={password} />
+
+            <TextInput 
+                style={styles.textInput} 
+                value={email} 
+                onChangeEmail={onChangeEmail} 
+            />
+            <TextInput 
+                style={styles.textInput} 
+                value={password} 
+                onChangePassword={onChangePassword} 
+            />
+
             <LoginButton style={styles.mainLoginButton}> Login </LoginButton>
             <LoginButton style={styles.socialLoginButton}> Google </LoginButton>
             <LoginButton style={styles.socialLoginButton}> Facebook </LoginButton>
             <LoginButton style={styles.socialLoginButton}> X </LoginButton>
+            
         </View>
     )
 }
@@ -36,6 +48,6 @@ const styles = StyleSheet.create({
 
     },
     socialLoginButton: {
-        
+
     }
 })
