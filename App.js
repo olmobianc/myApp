@@ -4,13 +4,26 @@ import { useState } from 'react';
 //import components
 import SkillInput from './components/SkillInput';
 import SkillItem from './components/SkillItem';
+import LoginScreen from './screens/loginScreen';
 
 export default function App() {
 
   const [skills, setSkills] = useState([])
 
+  //add skill to teach
   function addSkillHandler(enteredSkillText) {
-    setSkills(currentSkill => [...currentSkill, enteredSkillText])
+    console.log(skills)
+    setSkills(currentSkill => [
+      ...currentSkill, 
+      {text: enteredSkillText, id: Math.random().toString()}
+    ])
+  }
+
+  //delete skill inserted
+  function deleteSkillHandler(id) {
+    setSkills(currentSkill => {
+      return currentSkill.filter(item => item.id !== id)
+    })
   }
 
   return (
@@ -22,9 +35,15 @@ export default function App() {
       
       <View style={styles.textContainer}>
         {skills.map(skill =>
-          <SkillItem text={skill} />
+          <SkillItem 
+            id={skill.id} 
+            text={skill.text} 
+            onDelete={deleteSkillHandler} 
+          />
         )}
       </View>
+
+      <LoginScreen />
 
     </View>
   );
