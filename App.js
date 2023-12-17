@@ -29,7 +29,7 @@ export default function App() {
   return (
     <View style={styles.appContainer}>
 
-      <View style={styles.inputContainer}>
+      {/* <View style={styles.inputContainer}>
        <SkillInput onPress={addSkillHandler} />
       </View>
       
@@ -41,7 +41,7 @@ export default function App() {
             onDelete={deleteSkillHandler} 
           />
         )}
-      </View>
+      </View> */}
 
       <LoginScreen />
 

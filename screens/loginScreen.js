@@ -1,33 +1,43 @@
-import { TextInput, View, Text } from 'react-native'
+import { StyleSheet, TextInput, View, Text, Image } from 'react-native'
+import { useState } from 'react';
+
+import logo from "../assets/splash.png"
 
 import LoginButton from '../components/LoginButton'
 
 function LoginScreen() {
 
-    const [email, onChangeEmail] = React.useState('your email');
-    const [password, onChangePassword] = React.useState('your password');
+    const [email, onChangeEmail] = useState('');
+    const [password, onChangePassword] = useState('');
 
     return (
-        <View>
+        <View style={styles.loginContainer}>
 
-            <Text style={styles.loginText}>Login</Text>
+            <Image source={logo} style={styles.logo}  />
+
+            {/* <Text style={styles.loginText}>Login</Text> */}
 
             <TextInput 
-                style={styles.textInput} 
+                style={styles.loginInput}
+                placeholder="email address"
                 value={email} 
-                onChangeEmail={onChangeEmail} 
+                onChangeText={onChangeEmail} 
             />
             <TextInput 
-                style={styles.textInput} 
+                style={styles.loginInput} 
+                placeholder="password"
                 value={password} 
-                onChangePassword={onChangePassword} 
+                onChangeText={onChangePassword}
+                secureTextEntry={true}
             />
 
-            <LoginButton style={styles.mainLoginButton}> Login </LoginButton>
-            <LoginButton style={styles.socialLoginButton}> Google </LoginButton>
-            <LoginButton style={styles.socialLoginButton}> Facebook </LoginButton>
-            <LoginButton style={styles.socialLoginButton}> X </LoginButton>
-            
+            <LoginButton text="Sign in" type="primary"></LoginButton>
+            <LoginButton text="Forgot password?" type="tertiary"></LoginButton>
+            <LoginButton text="Facebook" type="secondary"></LoginButton>
+            <LoginButton text="Google" type="secondary"></LoginButton>
+            <LoginButton text="Apple" type="secondary"></LoginButton>
+            <LoginButton text="Don't have an account?" type="tertiary"></LoginButton>
+
         </View>
     )
 }
@@ -35,19 +45,28 @@ function LoginScreen() {
 export default LoginScreen
 
 const styles = StyleSheet.create({
-    loginText: {
-
+    loginContainer: {
+        flex: 1,
+        padding: 40,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: "flex-start"
     },
-    textInput: {
+    logo: {
+        width: 200,
+        height: 200,
+        borderWidth: 1,
+        borderColor: "#ccc",
+        marginVertical: 15,
+    },
+    loginText: {
+        padding: 5,
+    },
+    loginInput: {
         borderWidth: 1,
         padding: 5,
+        marginVertical: 5,
         borderColor: "#ccc",
-        width: "80%"
-    },
-    mainLoginButton: {
-
-    },
-    socialLoginButton: {
-
+        minWidth: "100%",
     }
 })
