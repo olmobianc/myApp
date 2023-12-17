@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, View, Text, Image } from 'react-native'
+import { StyleSheet, TextInput, Text, View, Image, ScrollView } from 'react-native'
 import { useState } from 'react';
 
 import logo from "../assets/splash.png"
@@ -11,11 +11,12 @@ function LoginScreen() {
     const [password, onChangePassword] = useState('');
 
     return (
-        <View style={styles.loginContainer}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.loginContainer}>
 
-            <Image source={logo} style={styles.logo}  />
+            <Image source={logo} style={styles.logo}/>
 
-            {/* <Text style={styles.loginText}>Login</Text> */}
+            <Text style={styles.loginText}>Login</Text>
 
             <TextInput 
                 style={styles.loginInput}
@@ -33,12 +34,13 @@ function LoginScreen() {
 
             <LoginButton text="Sign in" type="primary"></LoginButton>
             <LoginButton text="Forgot password?" type="tertiary"></LoginButton>
-            <LoginButton text="Facebook" type="secondary"></LoginButton>
-            <LoginButton text="Google" type="secondary"></LoginButton>
-            <LoginButton text="Apple" type="secondary"></LoginButton>
-            <LoginButton text="Don't have an account?" type="tertiary"></LoginButton>
+            <LoginButton text="Sign in with Facebook" type="secondary"></LoginButton>
+            <LoginButton text="Sign in with Google" type="secondary"></LoginButton>
+            <LoginButton text="Sign in with Apple" type="secondary"></LoginButton>
+            <LoginButton text="Don't have an account? Sign up" type="tertiary"></LoginButton>
 
-        </View>
+            </View>
+        </ScrollView>
     )
 }
 
@@ -47,7 +49,7 @@ export default LoginScreen
 const styles = StyleSheet.create({
     loginContainer: {
         flex: 1,
-        padding: 40,
+        padding: 20,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: "flex-start"
@@ -61,6 +63,8 @@ const styles = StyleSheet.create({
     },
     loginText: {
         padding: 5,
+        fontWeight: "bold",
+        fontSize: 24,
     },
     loginInput: {
         borderWidth: 1,

@@ -4,7 +4,12 @@ import { useState } from 'react';
 //import components
 import SkillInput from './components/SkillInput';
 import SkillItem from './components/SkillItem';
-import LoginScreen from './screens/loginScreen';
+
+//import screens
+import LoginScreen from './screens/LoginScreen';
+import CreateAccountScreen from './screens/CreateAccountScreen';
+import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
+import ResetPasswordScreen from './screens/ResetPasswordScreen';
 
 export default function App() {
 
@@ -43,7 +48,13 @@ export default function App() {
         )}
       </View> */}
 
-      <LoginScreen />
+      {/* <LoginScreen /> */}
+
+      {/* <CreateAccountScreen /> */}
+
+      {/* <ForgotPasswordScreen /> */}
+
+      <ResetPasswordScreen />
 
     </View>
   );
@@ -52,7 +63,7 @@ export default function App() {
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    padding: 40,
+    padding: 20,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
