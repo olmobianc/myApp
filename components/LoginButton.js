@@ -1,12 +1,22 @@
 import { StyleSheet, Text, Pressable } from 'react-native'
 
+import { useNavigation } from '@react-navigation/native';
+
 function LoginButton(props) {
+
+    // const navigation = useNavigation();
+
+    function handleSignIn() {
+        console.log("ciao")
+        // navigation.navigate("ForgotPasswordScreen")
+    }
+
     return (
         <Pressable 
             style={
                 [styles.signInButton, styles[`signInButton_${props.type}`]]
-            } 
-            onPress={console.log("ciao")}
+            }
+            onPress={handleSignIn}
         >
             <Text 
                 style={

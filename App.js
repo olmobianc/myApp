@@ -10,6 +10,7 @@ import LoginScreen from './screens/LoginScreen';
 import CreateAccountScreen from './screens/CreateAccountScreen';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
 import ResetPasswordScreen from './screens/ResetPasswordScreen';
+import Navigation from './navigation/Navigation';
 
 export default function App() {
 
@@ -54,7 +55,7 @@ export default function App() {
 
       {/* <ForgotPasswordScreen /> */}
 
-      <ResetPasswordScreen />
+      <Navigation />
 
     </View>
   );

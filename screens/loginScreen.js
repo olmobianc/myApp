@@ -32,12 +32,37 @@ function LoginScreen() {
                 secureTextEntry={true}
             />
 
-            <LoginButton text="Sign in" type="primary"></LoginButton>
-            <LoginButton text="Forgot password?" type="tertiary"></LoginButton>
-            <LoginButton text="Sign in with Facebook" type="secondary"></LoginButton>
-            <LoginButton text="Sign in with Google" type="secondary"></LoginButton>
-            <LoginButton text="Sign in with Apple" type="secondary"></LoginButton>
-            <LoginButton text="Don't have an account? Sign up" type="tertiary"></LoginButton>
+            <LoginButton 
+                text="Sign in" 
+                type="primary" 
+                onPress
+            >
+            </LoginButton>
+            <LoginButton 
+                text="Forgot password?" 
+                type="tertiary"
+            >
+            </LoginButton>
+            <LoginButton 
+                text="Sign in with Facebook" 
+                type="secondary"
+            >
+            </LoginButton>
+            <LoginButton 
+                text="Sign in with Google" 
+                type="secondary"
+            >
+            </LoginButton>
+            <LoginButton 
+                text="Sign in with Apple" 
+                type="secondary"
+            >
+            </LoginButton>
+            <LoginButton 
+                text="Don't have an account? Sign up" 
+                type="tertiary"
+            >
+            </LoginButton>
 
             </View>
         </ScrollView>
